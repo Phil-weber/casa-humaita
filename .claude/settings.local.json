@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude plugin *)",
+      "Bash(echo \"---EXIT:$?---\")",
+      "Read(//c/Users/philipp.weber/.claude/plugins/**)",
+      "Read(//c/Users/philipp.weber/.claude/plugins/data/**)",
+      "Read(//c/Users/philipp.weber/.claude/**)",
+      "Read(//c/Users/philipp.weber/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "Bash(git --version)",
+      "Bash(rm -rf \"$HOME/.claude/skills-src/shadcn-skills\" && echo \"removido: skills-src/shadcn-skills \\(clone que eu criei\\)\" *)",
+      "Bash(node scripts/make-fonts.mjs)",
+      "Bash(mkdir -p .fontsrc)",
+      "Bash(curl -sSL -o .fontsrc/jost.ttf \"https://github.com/google/fonts/raw/main/ofl/jost/Jost%5Bwght%5D.ttf\" -w \"HTTP %{http_code}  %{size_download} bytes\\\\n\")",
+      "Bash(node scripts/make-texture.mjs)",
+      "Bash(printf '{}\\\\n')",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  em %{time_total}s\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/ -o /tmp/home.html -w \"HTTP %{http_code}  %{size_download} bytes\\\\n\")",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"localhost:3000 -> HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(find . 'C:\\\\Users\\\\philipp.weber/Downloads' 'C:\\\\Users\\\\philipp.weber/Documents' -iname *arquitetura* -not -path ./node_modules/* -not -path ./.next/*)",
+      "Bash(cp \"Exteriores/foto-arquitetura.png\" .assetsrc/)",
+      "Bash(node scripts/prepare-assets.mjs)",
+      "Bash(node -)",
+      "Bash(taskkill //PID 28624 //F)",
+      "Bash(curl -s -o /dev/null -w \"porta 3000 -> HTTP %{http_code}\\\\n\" --max-time 3 http://localhost:3000/)",
+      "Bash(node -e \"const m=require\\('./messages/pt.json'\\);console.log\\(JSON.stringify\\({hero:m.hero,reviews:m.reviews},null,1\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 90 http://localhost:3000/)"
+    ]
+  }
+}

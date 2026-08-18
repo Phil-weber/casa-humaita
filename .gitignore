@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Fontes e imagens de origem: entram no pipeline, nao no deploy.
+.fontsrc/
+.assetsrc/
+
+# Variantes geradas por scripts/prepare-assets.mjs — reproduziveis com `npm run assets`.
+public/images/
+public/textures/plaster.png
+
+.DS_Store

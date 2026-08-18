@@ -1,0 +1,501 @@
+{
+  "site": {
+    "name": "Casa Humaitá",
+    "tagline": "Búzios · Brasil",
+    "location": "Armação dos Búzios, RJ, Brasil",
+    "address": "Rua Alto do Humaitá, 8 — Armação dos Búzios, RJ",
+    "instagram": "@casa.humaita",
+    "instagramUrl": "https://www.instagram.com/casa.humaita/",
+    "airbnbUrl": "https://www.airbnb.com.br/rooms/765063066075542174"
+  },
+  "meta": {
+    "home": {
+      "title": "Casa Humaitá — Casa de alto padrão em Búzios com vista para a baía",
+      "description": "Casa inteira no alto do Morro do Humaitá, em Búzios. Nove hóspedes, quatro suítes com vista para o mar, piscina privativa e a Orla Bardot a dois minutos a pé."
+    }
+  },
+  "nav": {
+    "hero": {
+      "book": {
+        "label": "Reserve sua estadia",
+        "href": "#contato"
+      },
+      "rooms": {
+        "label": "Veja os cômodos",
+        "href": "#ambientes"
+      },
+      "contact": {
+        "label": "Nossos contatos",
+        "href": "#contato"
+      }
+    },
+    "book": "Reserve já",
+    "whatsapp": "WhatsApp",
+    "main": {
+      "house": {
+        "label": "A casa",
+        "href": "#ambientes"
+      },
+      "arch": {
+        "label": "Arquitetura",
+        "href": "#arquitetura"
+      },
+      "location": {
+        "label": "Localização",
+        "href": "#localizacao"
+      },
+      "reviews": {
+        "label": "Avaliações",
+        "href": "#avaliacoes"
+      },
+      "buzios": {
+        "label": "Conheça Búzios",
+        "href": "#buzios"
+      },
+      "contact": {
+        "label": "Contato",
+        "href": "#contato"
+      }
+    }
+  },
+  "hero": {
+    "eyebrow": "BÚZIOS · BRASIL",
+    "title": "Casa Humaitá",
+    "subtitle": "Sua casa no paraíso de Búzios",
+    "scroll": "Role para descer",
+    "counter": "00",
+    "caption": "quatro suítes sobre o mar",
+    "captionCta": {
+      "label": "Conheça a casa",
+      "href": "#ambientes"
+    }
+  },
+  "manifesto": {
+    "linhas": [
+      [
+        {
+          "t": "Sua casa "
+        },
+        {
+          "t": "inteira",
+          "em": true,
+          "azul": true
+        },
+        {
+          "t": " no ponto mais lindo de "
+        },
+        {
+          "t": "Búzios",
+          "azul": true
+        },
+        {
+          "t": "."
+        }
+      ],
+      [
+        {
+          "t": "Sem recepção, sem corredor, sem horário."
+        }
+      ],
+      [
+        {
+          "t": "Só a vista",
+          "em": true,
+          "azul": true
+        },
+        {
+          "t": ", do nascer ao pôr do sol."
+        }
+      ]
+    ]
+  },
+  "facts": {
+    "guests": {
+      "value": "9",
+      "label": "HÓSPEDES"
+    },
+    "suites": {
+      "value": "4",
+      "label": "SUÍTES"
+    },
+    "beds": {
+      "value": "6",
+      "label": "CAMAS"
+    },
+    "baths": {
+      "value": "5,5",
+      "label": "BANHEIROS"
+    },
+    "pool": {
+      "value": "1",
+      "label": "PISCINA PRIVATIVA"
+    },
+    "view": {
+      "value": "180°",
+      "label": "DE VISTA PARA O MAR"
+    }
+  },
+  "_nota_rooms": "rooms.title escrito pelo desenvolvimento a pedido do cliente. Nao constava no copy.md — pendente de aprovacao.",
+  "rooms": {
+    "eyebrow": "A CASA",
+    "title": "Descubra nossa casa",
+    "cards": {
+      "view": "A vista",
+      "living": "Sala de estar",
+      "kitchen": "Cozinha",
+      "master": "Suíte principal",
+      "suite1": "Suíte 1",
+      "suite2": "Suíte 2",
+      "suite3": "Suíte 3",
+      "pool": "Piscina",
+      "grill": "Churrasqueira",
+      "garden": "Jardim"
+    }
+  },
+  "_nota_vitrine": "Textos dos Sticky Scroll Cards, ditados pelo cliente nesta rodada.",
+  "vitrine": {
+    "hint": "Explore nossas fotos",
+    "cards": [
+      {
+        "foto": "j-3",
+        "titulo": "Sua casa em Búzios"
+      },
+      {
+        "foto": "e-6",
+        "titulo": "Melhor vista da Região"
+      },
+      {
+        "foto": "p-5",
+        "titulo": "Piscina vista mar"
+      },
+      {
+        "foto": "s-8",
+        "titulo": "Sala Ampla"
+      },
+      {
+        "foto": "e-5",
+        "titulo": "@casa.humaitá"
+      }
+    ]
+  },
+  "lightbox": {
+    "close": "Fechar",
+    "prev": "Anterior",
+    "next": "Próxima",
+    "counter": "{current} / {total}"
+  },
+  "arch": {
+    "display": "ARQUITETURA",
+    "cta": "Confira a disponibilidade",
+    "eyebrow": "A CASA",
+    "titulo": "Arcos gregos no alto do Humaitá",
+    "texto": "Construída nos anos 70, a casa segue o partido mediterrâneo que chegou a Búzios pela arquitetura grega: arcos plenos em sequência, paredes brancas e telha cerâmica. É o desenho que resolve o clima e a vista ao mesmo tempo, no endereço mais privilegiado da península."
+  },
+  "location": {
+    "eyebrow": "BÚZIOS · RIO DE JANEIRO",
+    "title": "Nossa Localização",
+    "region": "ARMAÇÃO DOS BÚZIOS, RJ, BRASIL",
+    "mapCta": "VEJA NO MAPA",
+    "intro": "No coração de Búzios, entre a Orla Bardot e a Rua das Pedras, a Casa Humaitá fica a poucos minutos das praias mais bonitas da península. Toque nos pontos do mapa ou arraste para ver nossos locais.",
+    "unit": {
+      "walk": "min a pé",
+      "drive": "min de carro"
+    },
+    "places": {
+      "orla-bardot": "Orla Bardot",
+      "praia-do-canto": "Praia do Canto",
+      "rua-das-pedras": "Rua das Pedras",
+      "praia-dos-ossos": "Praia dos Ossos",
+      "praia-da-azeda": "Praia da Azeda",
+      "joao-fernandes": "João Fernandes",
+      "praia-do-forno": "Praia do Forno",
+      "mirante-joao-fernandes": "Mirante de João Fernandes",
+      "praia-brava": "Praia Brava",
+      "praia-da-foca": "Praia da Foca",
+      "praia-da-ferradura": "Praia da Ferradura",
+      "praia-da-tartaruga": "Praia da Tartaruga",
+      "porto-da-barra": "Porto da Barra",
+      "praia-de-geriba": "Praia de Geribá"
+    }
+  },
+  "reviews": {
+    "title": "Nossas Avaliações",
+    "rating": "4,91/5",
+    "count": "+40 avaliações",
+    "source": "Airbnb",
+    "quoteTitle": "O que nossos clientes dizem",
+    "credit": "Avaliações publicadas no Airbnb",
+    "creditLink": "Ver no Airbnb",
+    "items": [
+      {
+        "name": "Alenka",
+        "meta": "Boca Raton, Flórida",
+        "date": null,
+        "stars": 5,
+        "text": "Adoramos esta casa. A vista é simplesmente de tirar o fôlego e é, sem dúvida, a melhor parte da propriedade. A casa está muito bem equipada e é perfeita para uma família grande ou um grupo de amigos."
+      },
+      {
+        "name": "Joan",
+        "meta": "9 anos no Airbnb",
+        "date": "janeiro de 2026",
+        "stars": 5,
+        "text": "A Casa Humaitá é uma experiência maravilhosa, não só por sua vista magnífica e seu espaço maravilhoso, mas principalmente pelo Paulo, que está sempre à disposição."
+      },
+      {
+        "name": "Jezreel",
+        "meta": "10 anos no Airbnb",
+        "date": "novembro de 2025",
+        "stars": 5,
+        "text": "Este lugar era absolutamente excepcional, as fotos não fazem jus. As vistas são imaculadas e a localização é fantástica, a apenas cinco minutos a pé de toda a rua principal."
+      },
+      {
+        "name": "Verna",
+        "meta": "7 anos no Airbnb",
+        "date": "maio de 2024",
+        "stars": 5,
+        "text": "Casa maravilhosa, muito melhor do que nas fotos, possui tudo que é preciso para uma estadia confortável. Decoração linda, roupa de cama e banho impecáveis, suítes amplas com linda vista."
+      },
+      {
+        "name": "Mauro",
+        "meta": "Cinco Saltos, Argentina",
+        "date": "março de 2026",
+        "stars": 5,
+        "text": "Uma casa incrivelmente linda. A vista e a decoração são um sonho. Tem tudo o que você precisa. Ficamos muito felizes lá."
+      },
+      {
+        "name": "Erich",
+        "meta": "Monroe, Nova York",
+        "date": "dezembro de 2025",
+        "stars": 5,
+        "text": "Vista deslumbrante. Quartos confortáveis. Muito espaço. Excelente anfitrião, discreto e gentil."
+      },
+      {
+        "name": "Micaela",
+        "meta": "San Carlos de Bariloche, Argentina",
+        "date": "novembro de 2025",
+        "stars": 5,
+        "text": "Uma casa com uma vista incrível. Um lugar altamente recomendado para descansar. Nós voltaremos."
+      },
+      {
+        "name": "David",
+        "meta": "Orlando, Flórida",
+        "date": "setembro de 2025",
+        "stars": 5,
+        "text": "O lugar era lindo, com vistas incríveis e ótima localização, realmente acessível a muitos restaurantes e lugares a uma curta distância a pé."
+      },
+      {
+        "name": "Jessica Franzoni",
+        "meta": "5 anos no Airbnb",
+        "date": "junho de 2024",
+        "stars": 5,
+        "text": "A casa mais encantadora que já fiquei. Tem uma das vistas mais lindas de Búzios, vale muito a pena. Localização maravilhosa, dá para ir andando até a Orla Bardot."
+      },
+      {
+        "name": "Loreto",
+        "meta": "Santiago, Chile",
+        "date": "março de 2026",
+        "stars": 5,
+        "text": "Tudo foi maravilhoso e a casa era incrível, ótima localização."
+      }
+    ]
+  },
+  "buzios": {
+    "title": {
+      "line1": "Conheça",
+      "line2": "Búzios"
+    },
+    "intro": "Explore Búzios com as recomendações de quem mora aqui. Restaurantes, passeios e o jeito certo de aproveitar cada praia.",
+    "cardCta": "Ver guia",
+    "signature": "— CASA HUMAITÁ",
+    "cards": [
+      {
+        "id": "gastronomia",
+        "title": "Onde comer em Búzios",
+        "tag": "GASTRONOMIA",
+        "count": "12 restaurantes"
+      },
+      {
+        "id": "praias",
+        "title": "Qual praia escolher em cada dia",
+        "tag": "PRAIAS",
+        "count": "9 praias"
+      },
+      {
+        "id": "passeios",
+        "title": "O que fazer além da praia",
+        "tag": "PASSEIOS",
+        "count": "7 passeios"
+      },
+      {
+        "id": "casamento",
+        "title": "Casar com a baía atrás",
+        "tag": "CASAMENTOS",
+        "count": null
+      }
+    ]
+  },
+  "essentials": {
+    "title": "O essencial",
+    "items": [
+      {
+        "label": "Check-in",
+        "value": "15h às 20h"
+      },
+      {
+        "label": "Checkout",
+        "value": "até 12h"
+      },
+      {
+        "label": "Hóspedes",
+        "value": "até 9"
+      },
+      {
+        "label": "Animais",
+        "value": "bem-vindos"
+      },
+      {
+        "label": "Enxoval",
+        "value": "lençóis, toalhas de banho e de praia inclusos e sempre trocados"
+      },
+      {
+        "label": "Internet",
+        "value": "Wi-Fi"
+      },
+      {
+        "label": "Climatização",
+        "value": "ar-condicionado em todas as suítes"
+      },
+      {
+        "label": "Estacionamento",
+        "value": "gratuito, no local"
+      },
+      {
+        "label": "Segurança",
+        "value": "câmeras externas e rua com portaria privada"
+      },
+      {
+        "label": "Cozinha",
+        "value": "equipada, aberta para a sala"
+      },
+      {
+        "label": "Área de serviço",
+        "value": "máquina de lavar, tanque e geladeiras extras"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Reserve direto com a gente",
+    "address": "Rua Alto do Humaitá, 8 — Armação dos Búzios, RJ",
+    "airbnbCta": "Veja nosso anúncio no Airbnb",
+    "instaCta": "@casa.humaita",
+    "soon": {
+      "whatsapp": "WhatsApp",
+      "form": {
+        "name": "Seu nome",
+        "dates": "Datas",
+        "guests": "Número de hóspedes",
+        "submit": "Conferir disponibilidade",
+        "checkin": "Check-in",
+        "checkout": "Checkout"
+      }
+    },
+    "eyebrow": "RESERVA DIRETA",
+    "subtitle": "Superhost · resposta em poucas horas · atendimento em português, espanhol e inglês.",
+    "whatsappCta": "WhatsApp",
+    "formTitle": "Ou nos conte suas datas",
+    "formHint": "O envio abre o WhatsApp com a mensagem já pronta.",
+    "modalClose": "Fechar"
+  },
+  "footer": {
+    "address": "Rua Alto do Humaitá, 8 — Armação dos Búzios, RJ, Brasil",
+    "instagram": "Instagram",
+    "airbnb": "Airbnb",
+    "lang": {
+      "pt": "PT",
+      "en": "EN",
+      "es": "ES"
+    },
+    "credit": "Criado por",
+    "rights": "© 2026 Casa Humaitá",
+    "whatsapp": "WhatsApp"
+  },
+  "_nota_a11y": "Strings de infraestrutura de acessibilidade, nao previstas no copy.md. Escritas pelo desenvolvimento para cumprir a regra 9 do CLAUDE.md e pendentes de aprovacao.",
+  "a11y": {
+    "pularParaConteudo": "Pular para o conteúdo",
+    "conteudoPrincipal": "Conteúdo principal"
+  },
+  "alt": {
+    "hero": "Vista aérea da Casa Humaitá sobre a Baía da Armação, com escunas ancoradas e as ilhas ao fundo",
+    "logo": "Casa Humaitá",
+    "passaro": "Pássaro da marca Casa Humaitá",
+    "airbnb": "Airbnb",
+    "mapa": "Mapa da península de Búzios com a Casa Humaitá e os pontos próximos",
+    "creditLogo": "Weberr",
+    "arquitetura": "Fachada da Casa Humaitá vista do jardim, com os arcos da varanda e a piscina",
+    "_nota_fotos": "As seis primeiras descrições vêm literalmente do copy.md §12. As demais foram escritas em registro factual, apenas com o que o mapeamento do assets.md garante sobre cada foto, sem adjetivo de venda. Pendente de revisão de quem viu as imagens.",
+    "fotos": {
+      "e-6": "Baía de Búzios vista de um dos arcos da varanda, com a piscina e o jardim abaixo",
+      "p-1": "Piscina com deck de madeira, a churrasqueira coberta ao lado e a baía ao fundo",
+      "q-8": "Suíte principal com cama de casal e porta aberta para a varanda com vista para o mar",
+      "cozinha-1": "Cozinha com bancada preta, azulejo azul e balcão de madeira voltado para a sala",
+      "b-1": "Banheiro da suíte principal com duas pias em mármore e janela para o jardim",
+      "e-1": "Área externa da Casa Humaitá com vista para a Baía da Armação",
+      "e-2": "Fachada da Casa Humaitá vista do jardim",
+      "e-3": "Arcos da varanda da Casa Humaitá",
+      "e-4": "Volume da Casa Humaitá visto de fora, com os arcos da varanda",
+      "e-5": "Área externa da Casa Humaitá",
+      "s-1": "Sala de estar da Casa Humaitá",
+      "s-3": "Sala de estar da Casa Humaitá com vista para a varanda",
+      "s-4": "Sala de estar da Casa Humaitá com pé-direito alto",
+      "s-5": "Sala de estar da Casa Humaitá à noite",
+      "s-6": "Sala de estar da Casa Humaitá",
+      "s-7": "Sala de estar da Casa Humaitá",
+      "s-8": "Sala de estar da Casa Humaitá",
+      "s-9": "Sala de estar da Casa Humaitá",
+      "s-10": "Sala de estar da Casa Humaitá",
+      "s-11": "Sala de estar da Casa Humaitá",
+      "s-12": "Sala de estar da Casa Humaitá",
+      "s-13": "Sala de estar da Casa Humaitá",
+      "s-14": "Sala de estar da Casa Humaitá",
+      "cozinha-2": "Cozinha da Casa Humaitá",
+      "cozinha-3": "Cozinha da Casa Humaitá",
+      "cozinha-4": "Cozinha da Casa Humaitá, aberta para a sala",
+      "cozinha-5": "Cozinha da Casa Humaitá",
+      "cozinha-6": "Cozinha da Casa Humaitá",
+      "q-1": "Suíte 2 da Casa Humaitá",
+      "q-3": "Suíte 1 da Casa Humaitá",
+      "q-4": "Suíte 3 da Casa Humaitá",
+      "q-5": "Suíte 3 da Casa Humaitá",
+      "q-6": "Suíte principal da Casa Humaitá",
+      "q-7": "Suíte principal da Casa Humaitá",
+      "q-9": "Suíte principal da Casa Humaitá",
+      "q-10": "Suíte principal da Casa Humaitá, com vista para o mar",
+      "q-11": "Suíte principal da Casa Humaitá, com vista para o mar",
+      "b-2": "Banheiro da suíte principal da Casa Humaitá",
+      "b-3": "Banheiro da suíte principal da Casa Humaitá",
+      "b-4": "Banheiro da suíte 2 da Casa Humaitá",
+      "b-5": "Banheiro da suíte 2 da Casa Humaitá",
+      "b-6": "Banheiro da suíte 3 da Casa Humaitá",
+      "p-2": "Piscina da Casa Humaitá",
+      "p-3": "Jardim da Casa Humaitá",
+      "p-4": "Piscina da Casa Humaitá com a baía ao fundo",
+      "p-5": "Piscina da Casa Humaitá",
+      "p-6": "Piscina da Casa Humaitá à noite",
+      "p-7": "Piscina da Casa Humaitá à noite",
+      "c-1": "Churrasqueira coberta da Casa Humaitá",
+      "c-2": "Churrasqueira coberta da Casa Humaitá",
+      "j-1": "Arco da varanda emoldurando o sol sobre a piscina",
+      "j-2": "Arcos da varanda da Casa Humaitá",
+      "j-3": "Arcos da varanda da Casa Humaitá",
+      "j-5": "Jardim da Casa Humaitá",
+      "j-6": "Jardim da Casa Humaitá à noite",
+      "j-7": "Jardim da Casa Humaitá",
+      "vitrine-gastronomia": "Mesa posta em restaurante de Búzios",
+      "vitrine-praias": "Praia de Búzios vista da encosta",
+      "vitrine-regiao": "Península de Búzios",
+      "vitrine-casamento": "Celebração de casamento em Búzios"
+    }
+  },
+  "_nota_contato": "contact.eyebrow, .title, .subtitle, .formTitle, .formHint e os rotulos dos botoes foram ditados pelo cliente nesta rodada (referencia do Lovable). Nao constavam no copy.md.",
+  "_nota_arch": "arch.eyebrow, .titulo e .texto escritos pelo desenvolvimento a pedido do cliente (referencia grega, decada de 70, localizacao privilegiada). Nao constavam no copy.md — pendentes de aprovacao e de confirmacao factual da data de construcao."
+}

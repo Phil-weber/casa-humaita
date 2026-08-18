@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #FBFBFB; }
+  a { color: #0170B2; text-decoration: none; }
+  a:hover { color: #01598e; }
+  @keyframes revealRoute { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+  @keyframes trailDrift { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -250; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .om-rail::-webkit-scrollbar { height: 3px; }
+  .om-rail::-webkit-scrollbar-track { background: #eef4f8; }
+  .om-rail::-webkit-scrollbar-thumb { background: #0170B2; }
+</style>
+</helmet>
+<section style="background:#FBFBFB;color:#10222e;font-family:'Newsreader',Georgia,serif;padding:0 0 0 0;overflow:hidden">
+  <div style="max-width:1680px;margin:0 auto;padding:88px 56px 0 56px;display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap">
+    <div style="max-width:680px">
+      <div style="font-family:'Newsreader',Georgia,serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#0170B2;margin-bottom:22px">Búzios · Rio de Janeiro</div>
+      <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(34px,3.6vw,58px);line-height:1.12;letter-spacing:-0.01em;margin:0;color:#10222e;text-wrap:pretty">Nossa Localização</h2>
+      <p style="font-family:'Newsreader',Georgia,serif;font-size:17px;line-height:1.65;color:#4a5b66;margin:22px 0 0 0;max-width:520px;text-wrap:pretty">Localizada bem no coração de Búzios, bem na orla bardot e a Rua das Pedras, a Casa Humaitá fica a poucos minutos das praias mais bonitas da península. Passe o mouse sobre os pontos do mapa para ver a distância.</p>
+    </div>
+    <div style="font-family:'Newsreader',Georgia,serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#8fa4b1;padding-top:10px">Armação dos Búzios, RJ, Brasil</div>
+  </div>
+
+  <div style="max-width:1680px;margin:0 auto;padding:8px 56px 0 56px">
+    <div style="position:relative;width:100%;aspect-ratio:1920/1080">
+      <img src="assets/mapa.png" alt="Mapa de Búzios" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;user-select:none;pointer-events:none">
+
+      <img src="assets/logo.png" alt="Casa Humaitá" style="position:absolute;left:74.2%;top:5.1%;width:15.6%;user-select:none;pointer-events:none">
+
+      <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible">
+        <path d="M 1126 308 C 1200 344 1288 330 1348 288 C 1392 258 1408 240 1440 236" fill="none" stroke="#0170B2" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="2.5 13" opacity="{{ trailOpacity }}" style="animation:trailDrift 24s linear infinite;transition:opacity .5s ease"></path>
+        <sc-if value="{{ hasRoute }}" hint-placeholder-val="{{ false }}">
+          <mask id="routeReveal" maskUnits="userSpaceOnUse">
+            <path d="{{ routeD }}" pathLength="1000" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-dasharray="1000" style="animation:revealRoute 1.15s cubic-bezier(.33,.05,.2,1) forwards;stroke-dashoffset:1000"></path>
+          </mask>
+          <path d="{{ routeD }}" mask="url(#routeReveal)" fill="none" stroke="#0170B2" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 13" opacity=".9"></path>
+        </sc-if>
+      </svg>
+
+      <sc-for list="{{ pins }}" as="p" hint-placeholder-count="14">
+        <div style="{{ p.wrapStyle }}">
+          <div onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" style="{{ p.pinStyle }}">
+            <svg viewBox="0 0 44 44" style="width:100%;height:100%;display:block;overflow:visible">
+              <circle cx="22" cy="22" r="21" fill="{{ p.fill }}" stroke="#0170B2" stroke-width="1.1"></circle>
+              <circle cx="22" cy="19" r="4.4" fill="none" stroke="{{ p.ink }}" stroke-width="1.6"></circle>
+              <line x1="22" y1="24" x2="22" y2="31.5" stroke="{{ p.ink }}" stroke-width="1.6" stroke-linecap="round"></line>
+            </svg>
+          </div>
+          <div style="{{ p.labelStyle }}">{{ p.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;justify-content:center;padding:6px 0 46px 0">
+      <a href="https://www.google.com/maps/place/Armação+dos+Búzios,+RJ" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:14px;font-family:'Newsreader',Georgia,serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#ffffff;background:#0170B2;border:1px solid #0170B2;padding:17px 34px;border-radius:999px;transition:background .35s ease,color .35s ease" style-hover="background:#ffffff;color:#0170B2">
+        <span>Veja no mapa</span>
+        <span style="font-size:14px;letter-spacing:0">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="om-rail" ref="{{ railRef }}" onMouseDown="{{ onDown }}" style="display:flex;overflow-x:auto;overflow-y:hidden;border-top:1px solid #dbe7ef;scrollbar-width:thin;cursor:grab;user-select:none">
+    <sc-for list="{{ cards }}" as="c" hint-placeholder-count="14">
+      <div onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" style="{{ c.cardStyle }}">
+        <div style="{{ c.photoStyle }}">
+          <image-slot id="{{ c.slotId }}" shape="rect" placeholder="{{ c.slotHint }}"></image-slot>
+          <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(1,112,178,.62) 0%,rgba(4,34,54,.82) 100%)"></div>
+        </div>
+        <div style="position:relative;z-index:2;display:flex;align-items:flex-start;gap:10px;padding:34px 30px 0 30px;pointer-events:none">
+          <span style="{{ c.numStyle }}">{{ c.minutes }}</span>
+          <span style="{{ c.unitStyle }}">{{ c.unit }}</span>
+        </div>
+        <div style="position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 30px 30px 30px;pointer-events:none">
+          <span style="{{ c.nameStyle }}">{{ c.name }}</span>
+          <span style="{{ c.dotStyle }}">
+            <svg viewBox="0 0 44 44" style="width:100%;height:100%;display:block">
+              <circle cx="22" cy="22" r="21" fill="{{ c.dotFill }}" stroke="{{ c.dotStroke }}" stroke-width="1.1"></circle>
+              <circle cx="22" cy="19" r="4.4" fill="none" stroke="{{ c.dotInk }}" stroke-width="1.6"></circle>
+              <line x1="22" y1="24" x2="22" y2="31.5" stroke="{{ c.dotInk }}" stroke-width="1.6" stroke-linecap="round"></line>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1600,&quot;height&quot;:1180}}">
+const BLUE = "#0170B2";
+const HOME = { x: 1110, y: 311 };
+
+// Nós da "estrada", todos dentro do contorno da península.
+const NODES = {
+  A:  { x: 1118, y: 352 },
+  W1: { x: 1042, y: 392, up: "A"  },
+  W2: { x: 978,  y: 400, up: "W1" },
+  W3: { x: 905,  y: 392, up: "W2" },
+  W4: { x: 820,  y: 418, up: "W3" },
+  W5: { x: 762,  y: 500, up: "W4" },
+  W6: { x: 700,  y: 655, up: "W5" },
+  S1: { x: 1030, y: 470, up: "W2" },
+  S2: { x: 1022, y: 540, up: "S1" },
+  S3: { x: 1105, y: 495, up: "S1" },
+  S4: { x: 1180, y: 450, up: "S3" },
+  E1: { x: 1165, y: 318, up: "A"  },
+  E2: { x: 1205, y: 275, up: "E1" },
+  E3: { x: 1240, y: 330, up: "E1" },
+  E4: { x: 1248, y: 245, up: "E2" },
+  E5: { x: 1172, y: 215, up: "E2" },
+  E6: { x: 1185, y: 175, up: "E5" },
+  E7: { x: 1208, y: 168, up: "E6" }
+};
+
+function smooth(pts) {
+  if (pts.length < 3) return "M " + pts[0][0] + " " + pts[0][1] + " L " + pts[1][0] + " " + pts[1][1];
+  let d = "M " + pts[0][0] + " " + pts[0][1];
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || pts[i + 1];
+    const t = 0.2;
+    const c1x = p1[0] + (p2[0] - p0[0]) * t, c1y = p1[1] + (p2[1] - p0[1]) * t;
+    const c2x = p2[0] - (p3[0] - p1[0]) * t, c2y = p2[1] - (p3[1] - p1[1]) * t;
+    d += " C " + c1x.toFixed(1) + " " + c1y.toFixed(1) + " " + c2x.toFixed(1) + " " + c2y.toFixed(1) + " " + p2[0] + " " + p2[1];
+  }
+  return d;
+}
+
+const PLACES = [
+  { id: "bardot",     name: "Orla Bardot",                 x: 1056, y: 352, min: 2,  mode: "a pé", node: "W1" },
+  { id: "gorda",      name: "Praia do Canto",              x: 930,  y: 337, min: 10, mode: "a pé", node: "W3" },
+  { id: "pedras",     name: "Rua das Pedras",              x: 988,  y: 408, min: 10, mode: "a pé", node: "W2" },
+  { id: "tartaruga",  name: "Praia dos Ossos",             x: 1143, y: 218, min: 10, mode: "a pé", node: "E5" },
+  { id: "manguinhos", name: "Praia da Azeda",              x: 1145, y: 176, min: 15, mode: "a pé", node: "E5" },
+  { id: "rasa",       name: "João Fernandes",              x: 1218, y: 158, min: 5,  mode: "de carro", node: "E7" },
+  { id: "joao",       name: "Praia do Forno",              x: 1218, y: 470, min: 5,  mode: "de carro", node: "S4" },
+  { id: "canto",      name: "Mirante de João Fernandes",   x: 1266, y: 243, min: 8,  mode: "de carro", node: "E4" },
+  { id: "ossos",      name: "Praia Brava",                 x: 1265, y: 362, min: 8,  mode: "de carro", node: "E3" },
+  { id: "brava",      name: "Praia da Foca",               x: 1155, y: 530, min: 8,  mode: "de carro", node: "S3" },
+  { id: "ferradura",  name: "Praia da Ferradura",          x: 1022, y: 576, min: 8,  mode: "de carro", node: "S2" },
+  { id: "formosa",    name: "Praia da Tartaruga",          x: 795,  y: 362, min: 10, mode: "de carro", node: "W4" },
+  { id: "geriba",     name: "Porto da Barra",              x: 712,  y: 550, min: 12, mode: "de carro", node: "W5" },
+  { id: "tucuns",     name: "Praia de Geribá",             x: 684,  y: 716, min: 15, mode: "de carro", node: "W6" }
+];
+
+class Component extends DCLogic {
+  state = { active: null };
+  rail = React.createRef();
+  drag = { on: false, startX: 0, startScroll: 0, moved: 0 };
+
+  set(id) { this.setState({ active: id }); }
+
+  fromPin(id, i) {
+    this.setState({ active: id });
+    const el = this.rail.current;
+    if (!el || !el.children[i]) return;
+    const c = el.children[i];
+    const target = c.offsetLeft - (el.clientWidth - c.offsetWidth) / 2;
+    el.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
+  }
+
+  onDown = (e) => {
+    const el = this.rail.current;
+    if (!el) return;
+    this.drag = { on: true, startX: e.clientX, startScroll: el.scrollLeft, moved: 0 };
+    el.style.cursor = "grabbing";
+  };
+  onMove = (e) => {
+    if (!this.drag.on) return;
+    const el = this.rail.current;
+    const dx = e.clientX - this.drag.startX;
+    this.drag.moved = Math.abs(dx);
+    el.scrollLeft = this.drag.startScroll - dx;
+  };
+  onUp = () => {
+    this.drag.on = false;
+    if (this.rail.current) this.rail.current.style.cursor = "grab";
+  };
+
+  componentDidMount() {
+    window.addEventListener("mousemove", this.onMove);
+    window.addEventListener("mouseup", this.onUp);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("mousemove", this.onMove);
+    window.removeEventListener("mouseup", this.onUp);
+  }
+
+  // Trilha por dentro da península: encadeia os nós da "estrada" e suaviza.
+  route(p) {
+    const pts = [[HOME.x, HOME.y]];
+    let n = NODES[p.node];
+    const chain = [];
+    while (n) { chain.unshift(n); n = n.up ? NODES[n.up] : null; }
+    for (const c of chain) pts.push([c.x, c.y]);
+    pts.push([p.x, p.y]);
+
+    // remove nós redundantes muito próximos do destino
+    const out = [pts[0]];
+    for (let i = 1; i < pts.length - 1; i++) {
+      const d = Math.hypot(pts[i][0] - p.x, pts[i][1] - p.y);
+      if (d > 34) out.push(pts[i]);
+    }
+    out.push(pts[pts.length - 1]);
+    return smooth(out);
+  }
+
+  renderVals() {
+    const active = this.state.active;
+    const act = PLACES.find(p => p.id === active) || null;
+
+    const pins = PLACES.map((p, i) => {
+      const on = p.id === active;
+      const blocked = PLACES.some(o => o.id !== p.id && Math.abs(o.x - p.x) < 170 && o.y - p.y > 0 && o.y - p.y < 120);
+      const side = blocked ? "bottom:118%" : "top:118%";
+      return {
+        side: side,
+        name: p.name,
+        fill: on ? BLUE : "#ffffff",
+        ink: on ? "#ffffff" : BLUE,
+        enter: () => this.fromPin(p.id, i),
+        leave: () => this.set(null),
+        wrapStyle: "position:absolute;left:" + (p.x / 19.2) + "%;top:" + (p.y / 10.8) + "%;width:2.6%;transform:translate(-50%,-50%);z-index:" + (on ? 6 : 4),
+        pinStyle: "width:100%;aspect-ratio:1;cursor:pointer;transition:transform .35s cubic-bezier(.22,.61,.36,1);transform:scale(" + (on ? 1.32 : 1) + ")",
+        labelStyle: "position:absolute;left:50%;" + side + ";transform:translateX(-50%) translateY(" + (on ? "0" : (blocked ? "4px" : "-4px")) + ");white-space:nowrap;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#12384f;background:rgba(255,255,255,.92);padding:5px 10px 4px 10px;box-shadow:0 2px 10px rgba(18,56,79,.10);opacity:" + (on ? 1 : 0) + ";transition:opacity .3s ease,transform .3s ease;pointer-events:none;z-index:8"
+      };
+    });
+
+    const cards = PLACES.map(p => {
+      const on = p.id === active;
+      return {
+        name: p.name,
+        minutes: String(p.min),
+        unit: "min " + p.mode,
+        slotId: "buzios-" + p.id,
+        slotHint: "Foto · " + p.name,
+        enter: () => this.set(p.id),
+        leave: () => this.set(null),
+        cardStyle: "position:relative;flex:0 0 auto;min-width:288px;height:230px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #dbe7ef;background:#FBFBFB;overflow:hidden;cursor:pointer",
+        photoStyle: "position:absolute;inset:0;z-index:1;clip-path:circle(" + (on ? "160%" : "0%") + " at 86% 84%);transition:clip-path .75s cubic-bezier(.22,.61,.36,1)",
+        numStyle: "font-family:'Newsreader',Georgia,serif;font-size:74px;line-height:.86;color:" + (on ? "#ffffff" : "#10222e") + ";transition:color .4s ease",
+        unitStyle: "font-family:'Newsreader',Georgia,serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding-top:6px;color:" + (on ? "rgba(255,255,255,.9)" : "#8fa4b1") + ";transition:color .4s ease",
+        nameStyle: "font-family:'Newsreader',Georgia,serif;font-size:22px;color:" + (on ? "#ffffff" : "#10222e") + ";transition:color .4s ease;text-shadow:" + (on ? "0 1px 12px rgba(0,0,0,.35)" : "none"),
+        dotStyle: "width:38px;height:38px;flex:0 0 auto;transition:transform .4s ease;transform:scale(" + (on ? 1.08 : 1) + ")",
+        dotFill: on ? "#ffffff" : "transparent",
+        dotStroke: on ? "#ffffff" : "#bcd3e2",
+        dotInk: on ? BLUE : "#bcd3e2"
+      };
+    });
+
+    return { pins, cards, trailOpacity: act ? 0.2 : 0.85, railRef: this.rail, onDown: this.onDown, hasRoute: !!act, routeD: act ? this.route(act) : "" };
+  }
+}
+</script>
+</body>
+</html>

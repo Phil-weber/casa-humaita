@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Fontes self-hosted — CLAUDE.md exige, nada de Google Fonts em runtime.
+   Geradas por scripts/make-fonts.mjs (subset latino, woff2).
+   Newsreader vem do zip aprovado pelo cliente; Jost do repositorio oficial (OFL).
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/newsreader-variable.woff2') format('woff2-variations');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/newsreader-italic-variable.woff2') format('woff2-variations');
+  font-weight: 200 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/jost-variable.woff2') format('woff2-variations');
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Tokens — brief.md §3. Todo valor tem origem rastreavel.
+   ========================================================================== */
+
+:root {
+  /* cor */
+  --white: #ffffff;
+  --bg: #fbfbfb; /* fundo do site — revisao do cliente; o branco puro fica so em cartao/foto */
+  --navy: #0e2136;
+  --blue: #0170b2;
+  --blue-hover: #01598e;
+  --ink: #10222e;
+  --body: #4a5b66;
+  --faint: #8fa4b1;
+  --rule: #dbe7ef;
+  --rail-track: #eef4f8;
+  --on-dark: #ffffff;
+  --on-dark-2: rgba(255, 255, 255, 0.9);
+  --on-dark-rule: rgba(255, 255, 255, 0.18);
+
+  /* tipografia */
+  --font-newsreader: 'Newsreader';
+  --font-jost: 'Jost';
+
+  /* geometria */
+  --container: 1680px;
+  --pad-x: 20px; /* 56px a partir de 768px */
+  --section-y: clamp(96px, 12vh, 180px);
+  --texture-opacity: 0.03;
+
+  /* efeitos — brief §6 e §7, orcamento fechado em oito */
+  --lenis-lerp: 0.09; /* §6.2 — inercia curta, nao o padrao da biblioteca */
+  --hero-depth: 340vh; /* §7·1 */
+  --hero-lerp: 0.07; /* prop `smoothness` do arquivo aprovado */
+  --hero-caption-at: 0.72; /* §6 — legenda entra depois deste progresso */
+  --rail-h: clamp(320px, 46vh, 460px); /* §7·4 */
+  --rail-img-h: 125%; /* §6.4 — imagem mais alta que o frame */
+  --rail-travel: 25%; /* §6.4 — deslocamento total */
+  --arch-depth: 220vh; /* §6.5 */
+  --arch-start-w: 46%; /* §6.5 — largura inicial do bloco */
+  --arch-word-at: 0.78; /* §6.5 — a palavra entra depois deste progresso */
+  --preloader-ms: 1200ms; /* §6.1 */
+  --reveal-y: 6px; /* §6.6 */
+  --reveal-stagger: 60ms; /* §6.6 — escalonamento maximo */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --pad-x: 56px;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  html {
+    /* Removido de proposito: `scroll-behavior: smooth` conflita com o Lenis
+       (brief §12, correcao 4 do hero). */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-newsreader), Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Foco visivel em todo elemento interativo — CLAUDE.md §9.
+     Fica sempre legivel porque usa a cor corrente da secao. */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Alvo de ancora nao fica embaixo do header. */
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
+  ::selection {
+    background: var(--blue);
+    color: var(--white);
+  }
+}
+
+/* Animacoes da Localizacao — preservadas do arquivo aprovado pelo cliente. */
+@keyframes revealRoute {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes trailDrift {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -250;
+  }
+}
+
+/* ==========================================================================
+   Utilitarios do projeto
+   ========================================================================== */
+
+@layer components {
+  /* Container padrao — brief §3 */
+  .container-humaita {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--pad-x);
+  }
+
+  /* Textura de reboco a 3% sobre o branco — brief §3.
+     Pseudo-elemento para nao interferir no background das secoes. */
+  .textura::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/textures/plaster.png');
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: var(--texture-opacity);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Trilha de scrollbar das reguas — do arquivo aprovado de Localizacao. */
+  .rail-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue) var(--rail-track);
+  }
+  .rail-scroll::-webkit-scrollbar {
+    height: 3px;
+  }
+  .rail-scroll::-webkit-scrollbar-track {
+    background: var(--rail-track);
+  }
+  .rail-scroll::-webkit-scrollbar-thumb {
+    background: var(--blue);
+  }
+}
+
+/* ==========================================================================
+   prefers-reduced-motion — CLAUDE.md regra 8, sem excecao.
+   Quando ativo: sem preloader, sem pan, sem parallax, sem expansao.
+   O conteudo aparece direto.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
