@@ -4,12 +4,22 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 
-# Fontes e imagens de origem: entram no pipeline, nao no deploy.
+# Fontes e imagens de ORIGEM: entram no pipeline, nao no deploy. Continuam fora
+# do repositorio — sao 9,7MB de originais que so a maquina de quem gera precisa.
 .fontsrc/
 .assetsrc/
 
-# Variantes geradas por scripts/prepare-assets.mjs — reproduziveis com `npm run assets`.
-public/images/
-public/textures/plaster.png
+# ATENCAO — `public/images/` e `public/textures/plaster.png` JA ESTIVERAM AQUI,
+# com a justificativa de serem "reproduziveis com `npm run assets`". Nao eram:
+# o script le de `.assetsrc/`, que tambem esta ignorado, e o `build` e apenas
+# `next build`, sem o pipeline. O resultado foi um deploy na Vercel com as 674
+# variantes de imagem ausentes — o repositorio entregava 0 dos 693 arquivos de
+# `public/`.
+#
+# Estas variantes sao o ARTEFATO DE DEPLOY, e nao um produto intermediario:
+# versiona-las e o que torna o build reproduzivel e dispensa reencodar 83
+# imagens em AVIF a cada deploy. Se um dia forem geradas no CI, o caminho e
+# versionar `.assetsrc/` e chamar `npm run prepare:all` antes do `next build` —
+# nunca ignorar os dois lados ao mesmo tempo.
 
 .DS_Store
